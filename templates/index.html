@@ -22,17 +22,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">🏡 Home</a>
-                    </li>
-                    <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li> 
-                </ul>-->
+               
                 <span class="navbar-text">
                     <a href="https://github.com/sanjivch/NLP-Text-Summarizer">GitHub/sanjivch</a>
                 </span>
@@ -47,12 +37,12 @@
             <div class="card-body">
                 <form method="POST" action="/summarize_text">
                 <div class="form">
-                    <label for="floatingTextarea2">Enter text here...</label>
+                    <label for="floatingTextarea2">Text to summarize</label>
                     <textarea name="input-text" class="form-control" placeholder="✍️ Enter the text to be summarized here. Only English is supported" id="floatingTextarea2"
                         style="height: 100px"></textarea>
-                    <p>Word Count: {{ word_count }}</p>
+                    
                 </div>
-               
+               <br>
                 
                 <button type="submit" class="btn btn-outline-success">Summarize</button>
                 <button type="reset" class="btn btn-outline-danger">Clear Text</button>
@@ -63,12 +53,32 @@
         <br>
         <div class="row">
             <div class="col">
-                <h4>Input text</h4>
-            <p><small>{{ input_text }}</small></p>
+                <div class="card">
+                    <div class="card-header">
+                        Input text
+                       
+                    </div>
+                    <div class="card-body">
+                        <p><small>{{ input_text }}</small></p>
+                    </div>
+                    <div class="card-footer">
+                        Original Word Count: {{ word_count }}
+                    </div>
+                </div>
+                
+            
             </div>
             <div class="col">
-                <h4>Summarized text</h4>
-            <p><small>{{ summarized_text }}</small></p>
+                <div class="card">
+                    <div class="card-header">
+                        Summarized text
+                    </div>
+                    <div class="card-body">
+                        <p><small>{{ summarized_text }}</small></p>
+                    </div>
+                </div>
+                
+          
             </div>
         </div>
     </div>
@@ -84,4 +94,4 @@
 
 </body>
 
-</html>
+</html> 
