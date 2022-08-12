@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}NLP Series{% endblock %}
+
+{% block content %}
+
+
+    <div class="container">
+
+          <div class="card">
+            <div class="card-body">
+                <form method="POST" action="/summarize_text">
+                <div class="form">
+                    <label for="floatingTextarea2">Text to summarize</label>
+                    <textarea name="input-text" class="form-control" placeholder="✍️ Enter the text to be summarized here. Only English is supported" id="floatingTextarea2"
+                        style="height: 100px"></textarea>
+                    
+                </div>
+               <br>
+                
+                <button type="submit" class="btn btn-outline-success">Summarize</button>
+                <button type="reset" class="btn btn-outline-danger">Clear Text</button>
+            </form>
+               
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Input text
+                       
+                    </div>
+                    <div class="card-body">
+                        <p><small>{{ input_text }}</small></p>
+                    </div>
+                    <div class="card-footer">
+                        Original Word Count: {{ word_count }}
+                    </div>
+                </div>
+                
+            
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Summarized text
+                    </div>
+                    <div class="card-body">
+                        <p><small>{{ summarized_text }}</small></p>
+                    </div>
+                </div>
+                
+          
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+{% endblock %}

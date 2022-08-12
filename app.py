@@ -5,7 +5,7 @@ from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 from collections import Counter
 from heapq import nlargest
-from heapq import nlargest
+
 
 try:
     nlp = spacy.load("en_core_web_sm")
@@ -78,13 +78,19 @@ def summarize_text():
         input_text = request.form["input-text"]
         word_count, summarized_text = text_summarizer(input_text)
 
-    return render_template(
-        "index.html",
-        input_text=input_text,
-        summarized_text=summarized_text,
-        word_count=word_count,
-    )
+        return render_template(
+            "summarize.html",
+            input_text=input_text,
+            summarized_text=summarized_text,
+            word_count=word_count,
+        )
 
+    else:
+        return render_template(
+            "summarize.html",
+            input_text='',
+            summarized_text='',
+            word_count='',)
 
 if __name__ == "__main__":
     app.run(debug=True, port=33507)
